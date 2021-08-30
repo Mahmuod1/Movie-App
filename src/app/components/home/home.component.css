@@ -1,0 +1,21 @@
+ngb-carousel    {
+    width: 100%;
+    max-height: 450px;
+}
+
+.carousel-height {
+    max-height: 450px !important; 
+}
+
+.picsum-img-wrapper img {
+    min-width: 100%;
+}
+
+ngb-carousel .carousel-item:hover {
+    transition: all 0.4s;
+}
+
+.cards h1 {
+    color: white;
+    padding-top: 10%;
+}

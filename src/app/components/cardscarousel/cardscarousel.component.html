@@ -1,0 +1,527 @@
+<div class="">
+  <div class="cards-carousel" *ngIf=isDesktop>
+    <h2 style="color: white; padding-top: 5%; padding-bottom: 10px;">Popular Movies</h2>
+
+    <div class="row mt-5">
+      <ngb-carousel *ngIf="popularMovies &&isDesktop">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularMovies index as i">
+                <div *ngIf='i>=0&&i<6'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularMovies index as i">
+                <div *ngIf='i>=6&&i<12'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularMovies index as i">
+                <div *ngIf='i>=12&&i<18'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularMovies index as i">
+                <div *ngIf='i>=18&&i<=19'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-conainer">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+
+      </ngb-carousel>
+    </div>
+
+    <div class="" *ngIf='isDesktop  '>
+      <h2 style="color: white; padding-top: 5%; padding-bottom: 10px;">Top Rated Movies</h2>
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of topRatedMovies index as i">
+                <div *ngIf='i>=0&&i<6'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of topRatedMovies index as i">
+                <div *ngIf='i>=6&&i<12'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of topRatedMovies index as i">
+                <div *ngIf='i>=12&&i<18'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of topRatedMovies index as i">
+                <div *ngIf='i>=18&&i<=19'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class=".img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+
+      </ngb-carousel>
+    </div>
+
+    <div class="" *ngIf='isDesktop'>
+      <h2 style="color: white; padding-top: 5%; padding-bottom: 10px;">Trending Movies</h2>
+      <ngb-carousel >
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of trendingMovies index as i">
+                <div *ngIf='i>=0&&i<6'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of trendingMovies index as i">
+                <div *ngIf='i>=6&&i<12'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of trendingMovies index as i">
+                <div *ngIf='i>=12&&i<18'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of trendingMovies index as i">
+                <div *ngIf='i>=18&&i<=19'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+
+      </ngb-carousel>
+    </div>
+    <div class="row">
+      <h2 style="color: white; padding-top: 5%; padding-bottom: 10px;">Popular TV Shows</h2>
+      <ngb-carousel >
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularShows index as i">
+                <div *ngIf='i>=0&&i<6'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularShows index as i">
+                <div *ngIf='i>=6&&i<12'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularShows index as i">
+                <div *ngIf='i>=12&&i<18'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper cart-small-container">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1" *ngFor="let movie of popularShows index as i">
+                <div *ngIf='i>=18&&i<=20'>
+                  <a [routerLink]="['/watch', movie?.media_type, movie?.id]">
+                    <div class="img-small-container">
+                      <img src="{{ movie?.poster_path }}" alt="" style="width: 170px;">
+                    </div>
+                    <div class="carousel-caption title-small-container">
+                      <small>{{movie?.title||movie?.name}}</small>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+
+      </ngb-carousel>
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+<!--  For Mobile Show  -->
+
+
+<div class="container "  *ngIf='isMobile&&!isDesktop'>
+  <div class="row mt-5">
+    <div class="col-12 text-light mb-3">
+      <h3> Popular Movies</h3>
+    </div>
+    <div class="col-12">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor='let movie of popularMovies'>
+          <a [routerLink]='["/watch",movie.media_type,movie.id]'>
+            <div class="cart-container">
+              <div class="picsum-img-wrapper img-container custome-height">
+                <img [src]="movie.poster_path" alt="Random first slide" class="d-block w-100 h-100">
+              </div>
+              <div class="carousel-caption title-container">
+                <h3>{{movie?.title||movie?.name}}</h3>
+
+              </div>
+            </div>
+          </a>
+        </ng-template>
+
+
+      </ngb-carousel>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-12text-light mb-3">
+      <h3> Top Rated Movies</h3>
+    </div>
+
+    <div class="col-12">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor='let movie of topRatedMovies'>
+          <a [routerLink]='["/watch",movie.media_type,movie.id]'>
+            <div class="cart-container">
+              <div class="picsum-img-wrapper img-container custome-height">
+                <img [src]="movie.poster_path" alt="Random first slide" class="d-block w-100 h-100">
+              </div>
+              <div class="carousel-caption title-container">
+                <h3>{{movie?.title||movie?.name}}</h3>
+
+              </div>
+            </div>
+          </a>
+        </ng-template>
+
+
+      </ngb-carousel>
+    </div>
+
+  </div>
+
+
+  <div class="row mt-5">
+    <div class="col-12 text-light mb-3">
+      <h3> Trending Movies</h3>
+    </div>
+
+
+    <div class="col-12">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor='let movie of trendingMovies'>
+          <a [routerLink]='["/watch",movie.media_type,movie.id]'>
+            <div class="cart-container">
+              <div class="picsum-img-wrapper img-container custome-height">
+                <img [src]="movie.poster_path" alt="Random first slide" class="d-block w-100 h-100">
+              </div>
+              <div class="carousel-caption title-container">
+                <h3>{{movie?.title||movie?.name}}</h3>
+
+              </div>
+            </div>
+          </a>
+        </ng-template>
+
+
+      </ngb-carousel>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 text-light mb-3">
+      <h3> Popular Shows</h3>
+    </div>
+
+    <div class="col-12">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor='let movie of popularShows'>
+          <a [routerLink]='["/watch",movie.media_type,movie.id]'>
+            <div class="cart-container">
+              <div class="picsum-img-wrapper img-container custome-height">
+                <img [src]="movie.poster_path" alt="Random first slide" class="d-block w-100 h-100">
+              </div>
+              <div class="carousel-caption title-container">
+                <h3>{{movie?.title||movie?.name}}</h3>
+
+              </div>
+            </div>
+          </a>
+        </ng-template>
+
+
+      </ngb-carousel>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 text-light mb-3">
+      <h3> Top Rated Shows</h3>
+    </div>
+
+    <div class="col-12">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor='let movie of topRatedShows'>
+          <a [routerLink]='["/watch",movie.media_type,movie.id]'>
+            <div class="cart-container">
+              <div class="picsum-img-wrapper img-container custome-height">
+                <img [src]="movie.poster_path" alt="Random first slide" class="d-block w-100 h-100">
+              </div>
+              <div class="carousel-caption title-container">
+                <h3>{{movie?.title||movie?.name}}</h3>
+
+              </div>
+            </div>
+          </a>
+        </ng-template>
+
+
+      </ngb-carousel>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 text-light mb-3">
+      <h3> Trending Shows</h3>
+    </div>
+
+    <div class="col-12">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor='let movie of trendingShows'>
+          <a [routerLink]='["/watch",movie.media_type,movie.id]'>
+            <div class="cart-container">
+              <div class="picsum-img-wrapper img-container custome-height">
+                <img [src]="movie.poster_path" alt="Random first slide" class="d-block w-100 h-100">
+              </div>
+              <div class="carousel-caption title-container">
+                <h3>{{movie?.title||movie?.name}}</h3>
+
+              </div>
+            </div>
+          </a>
+        </ng-template>
+
+
+      </ngb-carousel>
+    </div>
+
+  </div>
+</div>

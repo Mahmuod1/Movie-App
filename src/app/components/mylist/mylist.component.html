@@ -1,0 +1,23 @@
+
+
+<div class="container">
+  <div style="text-align: center; padding-top: 60px;" *ngIf='!wishListItems.length'>
+      <h1 style="color: white;">No Items Found in WatchList</h1>
+  </div>
+
+  <div class="row" *ngIf='wishListItems.length'>
+    <div *ngFor='let item of wishListItems' class="col-md-3">
+     <a [routerLink]="['/watch',item.media_type,item.id]">
+      <div class=" cart-container">
+        <div class='img-container'>
+         <img [src]="item.backdrop_path" class="d-block w-100 h-75" alt="...">
+        </div>
+        <div class="title-container"> {{item.title}}</div>
+       </div>
+     </a>
+    </div>
+  </div>
+
+
+
+</div>

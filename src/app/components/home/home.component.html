@@ -1,0 +1,23 @@
+<div class='container'>
+
+  <div class="row">
+    <div class="col-12">
+
+      <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+          <ng-template ngbSlide *ngFor="let currentMovie of currentMovies">
+            <div class="carousel-caption">
+              <h3>{{ currentMovie.title }}</h3>
+            </div>
+              <div class="carousel-height picsum-img-wrapper">
+                  <a [routerLink] = "['/watch', currentMovie.media_type, currentMovie.id]">
+                      <img src="{{ currentMovie.backdrop_path }}" alt="{{ currentMovie.title }}" class="d-block w-100">
+                  </a>
+              </div>
+          </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div>
+
+<app-cardscarousel></app-cardscarousel>
+

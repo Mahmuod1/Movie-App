@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 ">
+      <div *ngIf='videoUrl'>
+        <iframe [src]='videoUrl.safeUrl' allow="accelerometer; encrypted-media; fullscreen share" width='100%'
+          height='380' frameborder='0'></iframe>
+      </div>
+
+    </div>
+    <div class="col-md-4 col-sm-8  flex-column ">
+
+      <h3 class="mt-3 text-light">{{videoInfo?.title}}</h3>
+      <p class="mt-3 custom-color font-weight-bold">{{videoInfo?.tagline}}</p>
+
+      <div class="mt-4 custom-color">{{videoInfo?.release_date.slice(0,4)}} | <i class="fas fa-star"></i>
+        {{videoInfo?.votes}} |{{hours }}hrs:{{minuets}}mins
+
+      </div>
+      <div class="mt-3">
+        <span class='text-light'>Genres: </span>
+        <span *ngFor='let gen of videoInfo?.genres' class="custom-color">
+          {{gen.name}},
+        </span>
+      </div>
+      <div class="mt-3 ">
+        <span class="text-light mr-2">spoken language :</span> <span
+          class="custom-color">{{videoInfo?.spoken_languages[0]?.name}}</span>
+      </div>
+      <div class="mt-3">
+        <div class="btn btn-primary" (click)='add()' *ngIf='!removeButton'>Add to whish List </div>
+
+
+        <div class='btn btn-secondary' (click)='removeItem()' *ngIf='removeButton'> Remove from wish List</div>
+        <ngb-alert #alertMessage *ngIf="successMessage" [type]="color" (closed)="successMessage = ''">{{ successMessage
+          }}
+        </ngb-alert>
+      </div>
+
+    </div>
+  </div>
+  <div class='row mt-4'>
+    <h3 class="col-8 text-light">Description</h3>
+    <div class="col-md-8 custom-color">
+      {{videoInfo?.overview}}
+    </div>
+
+  </div>
+
+  <div class="row mt-5 mb-5" >
+    <div class="col-12">
+      <div class="card-deck " *ngIf='castInfo'>
+       <div *ngFor='let cast of castInfo index as i' >
+        <div class="card" (click)="open(content,cast.id)" *ngIf='cast?.profile_path&&cast'>
+          <img class="card-img-top" [src]="cast?.profile_path" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{cast.name}}</h5>
+            <ng-template #content let-c="close" let-d="dismiss">
+             <div class=" ">
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">{{cast.name}}</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-4">
+                      <img [src]="cast?.profile_path" alt="" class="d-block w-100">
+                    </div>
+                    <div class="col-8">
+                      <small></small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+              </div>
+             </div>
+            </ng-template>
+          </div>
+        </div>
+       </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

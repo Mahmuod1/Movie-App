@@ -1,0 +1,38 @@
+body {
+    color: white;
+}
+
+
+.custom-color{
+  color: #aeb8c1;
+}
+.card{
+  min-width:21vw;
+max-width:21vw;
+
+
+}
+.card-deck{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow:auto;
+}
+
+
+.card-deck ::-webkit-scrollbar-track
+{
+	border: 5px solid white;
+	background-color: #b2bec3;
+}
+
+.card-deck::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: #dfe6e9;
+}
+
+.card-deck::-webkit-scrollbar-thumb
+{
+	background-color: #74b9ff;
+	border-radius: 10px;
+}
