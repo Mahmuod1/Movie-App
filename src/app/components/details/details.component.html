@@ -70,13 +70,13 @@
                       <img [src]="cast?.profile_path" alt="" class="d-block w-100">
                     </div>
                     <div class="col-8">
-                      <small></small>
+                      <small>{{this.castDetails?.biography}}</small>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
               </div>
              </div>
             </ng-template>

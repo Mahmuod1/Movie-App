@@ -79,12 +79,14 @@ this._success.pipe(debounceTime(5000)).subscribe(() => {
 
 getCastDetails(id:any){
   this.detailsServices.getCastDetails(id).subscribe(castDetails=>{
-    console.log(castDetails)
+    console.log(castDetails,'this is the cast Details')
+    this.castDetails=castDetails
         })
 }
 getCastExternal(id:any){
   this.detailsServices.getCastExternal(id).subscribe(castExternal=>{
-    console.log(castExternal)
+    console.log(castExternal,'this is the cast External Details ')
+    this.castExternal = castExternal
   })
 }
 getParams(){
@@ -104,7 +106,7 @@ getMovie(){
 this.detailsServices.getVideo(this.mediaType,this.id).subscribe(video=>{
 if(!video.message){
   this.videoUrl=video;
-console.log(video,'video')
+
 this.videoId=video.key.split('=')[1]
 const embed =this.basicUrl+video.key.split('=')[1]+'?enablejsapi=1&origin=http://localhost:4200/#/'
 this.videoUrl.safeUrl=this._sanitizer.bypassSecurityTrustResourceUrl(embed)
@@ -119,7 +121,7 @@ getMovieInfo(){
   this.detailsServices.getVideoDetails(this.mediaType,this.id).subscribe(videoInfo=>{
 
     this.videoInfo=videoInfo
-    console.log(this.videoInfo)
+    
   if(videoInfo.runtime){
    this.minuets=videoInfo.runtime %60;
     this.hours=Math.floor(videoInfo.runtime /60);
@@ -133,7 +135,7 @@ getMovieInfo(){
 getCastInfo(){
   this.detailsServices.getCastInfo(this.mediaType,this.id).subscribe((castInfo:Cast[])=>{
 this.castInfo=castInfo
-console.log(this.castInfo)
+console.log(this.castInfo,'this is cast Info')
 
 
   })
@@ -171,12 +173,12 @@ this.color='danger'
 getTvShow(){
   this.detailsServices.getTvShow(this.id).subscribe(tvShow=>{
  if(!tvShow.message){
-   console.log(tvShow.key)
+
    this.videoUrl=tvShow;
    const embed =this.basicUrl+tvShow.key
   this.videoUrl.safeUrl=this._sanitizer.bypassSecurityTrustResourceUrl(embed)
  this.detailsServices.getVideoDetails(this.mediaType,this.id).subscribe(details=>{
-   console.log(details)
+   console.log(details,'this is video details')
  })
  }
  else{
