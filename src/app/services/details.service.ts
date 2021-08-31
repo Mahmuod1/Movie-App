@@ -12,7 +12,7 @@ export class DetailsService {
 
 wishList:any=[]
 wishListItems=new BehaviorSubject(this.wishList);
-basicUrl='http://localhost:8080';
+basicUrl='https://serene-sierra-30992.herokuapp.com/';
 
 getVideo(mediaType:string|null,id:string|null):Observable<Movie>{
 

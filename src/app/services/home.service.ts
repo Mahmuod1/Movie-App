@@ -9,41 +9,42 @@ import { Observable } from 'rxjs';
 export class HomeService {
 
   constructor(private http: HttpClient) { }
+  basicUrl='https://serene-sierra-30992.herokuapp.com';
 getSearchResults(query:any):Observable<Results[]>{
-    return this.http.get<Results[]>(`http://localhost:8080/home/multisearch/${query}`)
+    return this.http.get<Results[]>(`${this.basicUrl}/home/multisearch/${query}`)
   }
   getCurrentPlayingMovies () {
-    let URL = "http://localhost:8080/home/currentPlayingMovies";
+    let URL = this.basicUrl+"/home/currentPlayingMovies";
     return this.http.get(URL);
   }
 
   getPopularMovies ():Observable<IMedia> {
-    let URL = "http://localhost:8080/home/popularMovies";
+    let URL = this.basicUrl+"home/popularMovies";
     return this.http.get<IMedia>(URL);
   }
 
   getTopRatedMovies ():Observable<IMedia> {
-    let URL = "http://localhost:8080/home/topRatedMovies";
+    let URL = this.basicUrl+"/home/topRatedMovies";
     return this.http.get<IMedia>(URL);
   }
 
   getTrendingMovies ():Observable<IMedia> {
-    let URL = "http://localhost:8080/home/trendingMovies";
+    let URL = this.basicUrl+"/home/trendingMovies";
     return this.http.get<IMedia>(URL);
   }
 
   getPopularShows () {
-    let URL = "http://localhost:8080/home/popularShows";
+    let URL = this.basicUrl+"home/popularShows";
     return this.http.get(URL);
   }
 
   getTopRatedShows ():Observable<IMedia> {
-    let URL = "http://localhost:8080/home/topRatedShows";
+    let URL = this.basicUrl+"/home/topRatedShows";
     return this.http.get<IMedia>(URL);
   }
 
   getTrendingShows ():Observable<IMedia> {
-    let URL = "http://localhost:8080/home/trendingShows";
+    let URL = this.basicUrl+"/home/trendingShows";
     return this.http.get<IMedia>(URL);
   }
 
